@@ -2,3 +2,70 @@ http://www.twinkling.cn/
 qqq
 http://git.oschina.net/jiangdx/stream
 https://github.com/zhangjikai/CodeSamples/tree/master/java/spring/mvc
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+.file {
+    position: relative;
+    display: inline-block;
+    background: #D0EEFF;
+    border-radius: 4px;
+    padding: 4px 12px;
+    overflow: hidden;
+    text-decoration: none;
+    text-indent: 0;
+    line-height: 20px;
+}
+.file input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+}
+</style>
+<script type="text/javascript" src="jquery-3.1.1.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$(".upload").change(function() {
+			var value = $(this).val();
+			$(this).val("");
+			var len = $("#addfile").children("div").length + 1;
+			alert(len)
+			$("#addfile").append('<div class="'+len
+					+'"><a href="javascript:;" class="file">'+value 
+					+'<input type="file" name="upload" value="" class="upload" disabled="disabled">'
+					+'</a>'
+					+'<img alt="" src="uploadify-cancel.png" class="1222" onclick="del()">'
+					+'</div>');
+		});
+/* 		$(".1").on("click",function(){
+			alert($(".1").parent("div").attr("id"));
+			$(".1").parents("div").empty();
+			return false;
+		}); */
+	});
+	function del() {
+		alert($(".1222").parent("div").attr("class"));
+		$(".1").parents("div").empty();
+		return false;
+	}
+</script>
+</head>
+<body>
+	<form>
+		
+		<div>
+			<a href="javascript:;" class="file">添加.apk文件
+				<input type="file" name="upload" value="" class="upload">
+			</a>
+		</div>
+		<div id="addfile">
+			<!-- 添加的标签 -->
+		</div>
+	</form>
+</body>
+</html>
